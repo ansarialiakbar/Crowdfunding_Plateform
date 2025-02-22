@@ -1,0 +1,13 @@
+/* global.css - Global Styles */
+body {
+    font-family: "Inter", sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* theme.css - Dark Mode */
+  .dark-mode {
+    background-color: #121212;
+    color: #fff;
+  }
+  
