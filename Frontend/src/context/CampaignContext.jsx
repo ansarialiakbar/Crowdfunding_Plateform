@@ -1,8 +1,7 @@
-// CampaignContext.jsx - Manages campaign state
 import { createContext, useContext, useState, useEffect } from "react";
 import { getAllCampaigns } from "../services/campaignService";
 
-const CampaignContext = createContext();
+export const CampaignContext = createContext(); // ✅ Export Context
 
 export const CampaignProvider = ({ children }) => {
   const [campaigns, setCampaigns] = useState([]);
@@ -34,4 +33,5 @@ export const CampaignProvider = ({ children }) => {
   );
 };
 
+// ✅ Export Hook for accessing campaign data
 export const useCampaigns = () => useContext(CampaignContext);

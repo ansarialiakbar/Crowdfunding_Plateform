@@ -33,53 +33,55 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h2 className="text-2xl font-bold">Sign Up</h2>
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-lg mt-4 w-96">
-        <input 
-          className="border p-2 w-full mb-4" 
-          type="text" 
-          placeholder="Name" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-          required
-        />
-        <input 
-          className="border p-2 w-full mb-4" 
-          type="email" 
-          placeholder="Email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          required
-        />
-        <input 
-          className="border p-2 w-full mb-4" 
-          type="password" 
-          placeholder="Password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          required
-        />
-        
-        <select 
-          className="border p-2 w-full mb-4" 
-          value={role} 
-          onChange={(e) => setRole(e.target.value)} 
-          required
-        >
-          <option value="">Select Role</option>
-          <option value="admin">Admin</option>
-          <option value="backer">Backer</option>
-          <option value="creator">Creator</option>
-        </select>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-purple-500 to-blue-600">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-96">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <input 
+            className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-400 outline-none" 
+            type="text" 
+            placeholder="Full Name" 
+            value={name} 
+            onChange={(e) => setName(e.target.value)} 
+            required
+          />
+          <input 
+            className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-400 outline-none" 
+            type="email" 
+            placeholder="Email Address" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
+            required
+          />
+          <input 
+            className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-400 outline-none" 
+            type="password" 
+            placeholder="Password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)} 
+            required
+          />
+          
+          <select 
+            className="border border-gray-300 rounded-lg p-3 w-full focus:ring-2 focus:ring-blue-400 outline-none" 
+            value={role} 
+            onChange={(e) => setRole(e.target.value)} 
+            required
+          >
+            <option value="">Select Role</option>
+            <option value="admin">Admin</option>
+            <option value="backer">Backer</option>
+            <option value="creator">Creator</option>
+          </select>
 
-        <button className="bg-green-500 text-white w-full p-2 rounded">Sign Up</button>
-      </form>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold w-full p-3 rounded-lg shadow-md transition duration-300">Sign Up</button>
+        </form>
 
-      <p className="mt-4">
-        Already have an account?  
-        <Link to="/login" className="text-blue-600 underline ml-2">Login</Link>
-      </p>
+        <p className="mt-4 text-center text-gray-600">
+          Already have an account?  
+          <Link to="/login" className="text-blue-600 font-bold underline ml-2 hover:text-blue-800">Login</Link>
+        </p>
+      </div>
     </div>
   );
 };
