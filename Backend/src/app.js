@@ -14,6 +14,7 @@ import chatRoutes from "./routes/chatRoutes.js";
 import donationRoutes from "./routes/donationRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
+import userRoutes from "./routes/userRoutes.js"
 import errorMiddleware from "./middleware/errorMiddleware.js";
 import path from "path";
 
@@ -45,7 +46,8 @@ app.use("/api/payments", paymentRoutes);
 app.use("/api/chat", chatRoutes);
 app.use("/api/donations", donationRoutes);
 app.use("/api/admin", adminRoutes);
-app.use("/api/contact", contactRoutes); 
+app.use("/api/contact", contactRoutes);
+app.use("/api/users", userRoutes) 
 
 // Global Error Handling Middleware
 app.use(errorMiddleware);
