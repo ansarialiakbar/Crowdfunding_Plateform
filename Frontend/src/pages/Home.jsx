@@ -135,7 +135,34 @@ const Home = () => {
             )}
           </div>
         </div>
-      </div>
+      </div> 
+      {/* ✅ Crowdfunding Information Section */}
+      <section className="p-10 bg-gray-100 flex flex-col md:flex-row items-center justify-between">
+        {/* ✅ Left Side - Information */}
+        <div className="md:w-1/2 text-left">
+          <h2 className="text-4xl font-bold text-gray-800 mb-6">📢 About Crowdfunding</h2>
+          <ul className="space-y-4 text-lg text-gray-700">
+            <li>✅ Crowdfunding helps raise funds for businesses, causes, and innovations.</li>
+            <li>✅ Empowers individuals to bring their ideas to life.</li>
+            <li>✅ Supports startups without requiring bank loans.</li>
+            <li>✅ Funds medical emergencies, education, and social causes.</li>
+            <li>✅ Encourages creative and tech innovations.</li>
+            <li>✅ Connects communities to support meaningful projects.</li>
+            <li>✅ Offers financial accessibility to everyone.</li>
+            <li>✅ Strengthens India's growth by supporting local entrepreneurs.</li>
+          </ul>
+        </div>
+
+        {/* ✅ Right Side - Image */}
+        <div className="md:w-1/2 flex justify-center">
+          <img
+            src="/images/india-map.jpg"
+            alt="India Crowdfunding"
+            className="w-96 h-auto rounded-lg shadow-lg"
+          />
+        </div>
+      </section>
+
 
       {/* ✅ Trending Campaigns (Only 1 at a time) */}
       <section className="p-10 text-center">
