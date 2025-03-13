@@ -31,10 +31,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // Debugging: Check if environment variables are loaded
-console.log("✅ Checking Environment Variables in app.js:");
-console.log("CLOUDINARY_CLOUD_NAME:", process.env.CLOUDINARY_CLOUD_NAME || "❌ Missing");
-console.log("CLOUDINARY_API_KEY:", process.env.CLOUDINARY_API_KEY || "❌ Missing");
-console.log("CLOUDINARY_API_SECRET:", process.env.CLOUDINARY_API_SECRET ? "Loaded ✅" : "Missing ❌");
+// console.log("✅ Checking Environment Variables in app.js:");
+// console.log("CLOUDINARY_CLOUD_NAME:", process.env.CLOUDINARY_CLOUD_NAME || "❌ Missing");
+// console.log("CLOUDINARY_API_KEY:", process.env.CLOUDINARY_API_KEY || "❌ Missing");
+// console.log("CLOUDINARY_API_SECRET:", process.env.CLOUDINARY_API_SECRET ? "Loaded ✅" : "Missing ❌");
 
 // Serve Uploaded Images
 app.use("/uploads", express.static(path.join(path.resolve(), "uploads")));
