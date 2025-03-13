@@ -112,6 +112,10 @@ npm start
 │── /public         # Static assets
 │── .env.example    # Example environment variables
 │── README.md       # Project documentation
+``` 
+## Project Live Link
+```
+https://timely-crepe-a97594.netlify.app
 ```
 
 ## 🤝 Contributing
