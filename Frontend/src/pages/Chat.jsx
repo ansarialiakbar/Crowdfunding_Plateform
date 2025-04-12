@@ -29,7 +29,7 @@ const Chat = () => {
     const loadMessages = async () => {
       const chatHistory = await fetchChatHistory(user._id, receiver);
       setMessages(chatHistory);
-      markMessagesAsRead(user._id, receiver);
+      await markMessagesAsRead(user._id, receiver);
     };
 
     loadMessages();
@@ -39,6 +39,10 @@ const Chat = () => {
   useEffect(() => {
     receiveMessages((msg) => {
       setMessages((prev) => [...prev, msg]);
+      // ✅ If this message is sent to current user from the active chat, mark it seen
+      if (msg.receiver === user?._id && msg.sender === receiver) {
+         markMessagesAsRead(user._id, receiver);
+      }
     });
 
     receiveTyping((isTyping) => {
@@ -69,7 +73,11 @@ const Chat = () => {
 
     const newMessage = await sendMessage({ sender: user._id, receiver, message, seen: false });
     if (newMessage) {
-      setMessages((prev) => [...prev, newMessage]);
+         // ✅ Show immediately on sender UI
+    setMessages((prev) => [...prev, newMessage]);
+
+    // ✅ Emit message over WebSocket to send it in real-time
+    socket.emit("sendMessage", newMessage);
       setMessage("");
     }
   };
